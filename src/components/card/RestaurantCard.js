@@ -1,31 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import { restaurant } from "./mockdata/restaurant";
-import { restlist } from "./mockdata/restlist";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png"
-          alt=""
-        />
-      </div>
-
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
 const RestaurantCard = (props) => {
   const { resData } = props;
 
@@ -71,31 +43,6 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
-};
+}
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">search</div>
-      <div className="res-container">
-        {
-          restlist.map((restaurant)=>(
-              <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-          ))
-        }
-      </div>
-    </div>
-  );
-};
-
-const App = () => {
-  return (
-    <div className="App">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+export default RestaurantCard;

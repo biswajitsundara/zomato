@@ -1,18 +1,23 @@
+import { LOGO_URL } from "../../utils/constants";
+import help from '../../utils/help.svg';
+
 const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
         <img
           className="logo"
-          src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png"
-          alt=""
+          src={LOGO_URL}
+          alt="header-logo"
         />
       </div>
 
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About us</li>
+          <li>
+            {/* <img src={help} alt="" /> */}
+            Help</li>
+          <li>Signin</li>
           <li>Cart</li>
         </ul>
       </div>

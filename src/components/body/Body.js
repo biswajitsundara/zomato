@@ -1,30 +1,41 @@
 import { restlist } from "../../../mockdata/restlist";
 import RestaurantCard from "../card/RestaurantCard";
 import { useState, useEffect } from "react";
-import {API_URL} from '../../utils/constants';
-import Shimmer from '../card/Shimmer';
+import { API_URL } from "../../utils/constants";
+import Shimmer from "../card/Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchData();
-  },[])
+  }, []);
 
-  const fetchData = async () =>{
+  const fetchData = async () => {
     const data = await fetch(API_URL);
     const json = await data.json();
-    const restList = json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    const restList =
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
     setListOfRestaurants(restList);
-  }
+  };
 
-  if(listOfRestaurants.length === 0){
-    return <Shimmer />
-  }
+  // if (listOfRestaurants.length === 0) {
+  //   return <Shimmer />;
+  // }
 
-  return (
+  return listOfRestaurants?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
-      {/* <div className="search">search</div> */}
+      <div className="search">
+        <input
+          placeholder="Search for Dishes and Restaurants"
+          class="search-box"
+        ></input>
+        <button className="btn-search">Search</button>
+      </div>
+
       <div className="filter">
         <button
           className="filter-btn"

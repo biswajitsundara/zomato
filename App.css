@@ -59,7 +59,8 @@ body {
   overflow: hidden;
   width: 20rem;
   height: 22.4rem;
-  transition: border 0.4s ease-in-out;
+  /* transition: border 0.4s ease-in-out; */
+  transition: transform 0.3s;
 }
 
 .res-container {
@@ -67,10 +68,15 @@ body {
   flex-wrap: wrap;
   gap: 1rem;
 }
-.res-card:hover {
+/* .res-card:hover {
   border: 0.1rem solid rgb(232, 232, 232);
   cursor: pointer;
   box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.1);
+} */
+
+.res-card:hover {
+  transform: scale(0.9);
+  cursor: pointer;
 }
 
 .res-logo {
@@ -264,4 +270,19 @@ body {
   width: 8%;
 }
 
+.help-section{
+  padding: 2rem;
+}
 
+.link-route {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.link-route:focus,
+.link-route:hover,
+.link-route:visited,
+.link-route:link,
+.link-route:active {
+  text-decoration: none;
+}

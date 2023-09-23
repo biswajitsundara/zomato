@@ -1,5 +1,6 @@
 import { LOGO_URL } from "../../utils/constants";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [btnNameLogin, setBtnNameLogin] = useState("Login");
@@ -27,7 +28,7 @@ const Header = () => {
               src="https://img.icons8.com/dotty/80/lifebuoy.png"
               alt="lifebuoy"
             />
-            <span>Help</span>
+            <Link to="/help" className="link-route"><span>Help</span></Link>
           </li>
           <li className="nav-item">
             <img

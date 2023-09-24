@@ -1,0 +1,12 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 100 100"
+>
+  <!-- Box with red border and white background -->
+  <rect x="10" y="10" width="80" height="80" fill="white" stroke="#e43b4f" stroke-width="4" />
+
+  <!-- Red triangle at the center of the box -->
+  <polygon points="50,30 30,70 70,70" fill="#e43b4f" />
+</svg>

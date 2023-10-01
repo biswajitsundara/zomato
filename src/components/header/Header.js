@@ -1,6 +1,7 @@
 import { LOGO_URL } from "../../utils/constants";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Header = () => {
   const [btnNameLogin, setBtnNameLogin] = useState("Login");
@@ -10,6 +11,7 @@ const Header = () => {
   },[btnNameLogin])
 
   console.log("Header is rendered");
+  const onlineStatus = useOnlineStatus();
 
   return (
     <div className="header">
@@ -21,6 +23,18 @@ const Header = () => {
 
       <div className="nav-items">
         <ul>
+          <li className="nav-item">
+            {(onlineStatus)? <span>&#128994;</span> : <span>&#128308;</span>}
+          </li>
+          <li className="nav-item">
+            <img
+              width="20"
+              height="20"
+              src="https://www.svgrepo.com/show/90104/groceries.svg"
+              alt="grocery"
+            />
+            <Link to="/grocery" className="link-route"><span>Grocery</span></Link>
+          </li>
           <li className="nav-item">
             <img
               width="20"

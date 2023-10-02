@@ -6,11 +6,14 @@ import nonveg from "../../utils/nonveg.svg";
 import veg from "../../utils/veg.svg";
 import starFillOrange from '../../utils/star-fill-orange.svg';
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
+import RestaurantCategory from "../accordion/RestaurantCategory";
+import {useState} from 'react';
 
 const RestaurantMenu = () => {
 
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(0);
 
   if (resInfo === null) return <Shimmer />;
 
@@ -31,7 +34,13 @@ const RestaurantMenu = () => {
   //console.log(resInfo?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card?.itemCards);
   //console.log(resInfo?.cards[0]?.card?.card?.info);
   //console.log(itemCards);
-  console.log(resInfo?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card);
+  //console.log(resInfo?.cards[2].groupedCard?.cardGroupMap?.REGULAR);
+
+  const categories = resInfo?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards.filter((filtCard)=> 
+    filtCard.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  );
+
+  // console.log(categories[0].card.card);
 
   const bestSellerRibbon = (
     <div>
@@ -61,7 +70,16 @@ const RestaurantMenu = () => {
         </div>
       </div>
 
-      {itemCards && (
+      {categories.map((category, index)=>(
+         <RestaurantCategory 
+         key={category.card.card.title} 
+         data={category.card.card}
+         showItems = {index === showIndex ? true : false}
+         setShowIndex = {()=>setShowIndex(index)}/>
+      ))}
+
+
+      {/* {itemCards && (
       <div className="restaurant-body-container">
       <div className="item-divider"></div>
         {itemCards.map((itemCard) => (
@@ -98,7 +116,7 @@ const RestaurantMenu = () => {
           </>
         ))}
       </div>
-      )}
+      )} */}
 
     </div>
   );

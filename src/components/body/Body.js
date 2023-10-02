@@ -1,5 +1,4 @@
-import { restlist } from "../../../mockdata/restlist";
-import RestaurantCard from "../card/RestaurantCard";
+import RestaurantCard, {withLabel} from "../card/RestaurantCard";
 import { useState, useEffect } from "react";
 import { API_URL } from "../../utils/constants";
 import Shimmer from "../card/Shimmer";
@@ -11,6 +10,8 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const RestaurantCardOpened = withLabel(RestaurantCard);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -21,13 +22,16 @@ const Body = () => {
     const restList =
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
+
+    //console.log(json?.data?.cards);
+
     setListOfRestaurants(restList);
     setFilteredRestaurant(restList);
   };
 
   const onlineStatus = useOnlineStatus();
-  if(!onlineStatus){
-    return <h1>You are offline</h1>
+  if (!onlineStatus) {
+    return <h1>You are offline</h1>;
   }
 
   // if (listOfRestaurants.length === 0) {
@@ -72,12 +76,22 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
+        
         {filteredRestaurant.map((restaurant) => (
-          <Link to={`/restaurants/${restaurant.info.id}`} className="link-route">
-            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            to={`/restaurants/${restaurant.info.id}`}
+            className="link-route"
+            key={restaurant.info.id}
+          >
+            {/* {console.log(restaurant?.info?.isOpen)} */}
+            { (restaurant?.info?.isOpen) ? (
+              <RestaurantCardOpened key={restaurant.info.id} resData={restaurant} />
+            ) : (
+              <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+            )}
           </Link>
         ))}
-        {console.log(filteredRestaurant)}
+        {/* {console.log(filteredRestaurant)} */}
       </div>
     </div>
   );

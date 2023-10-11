@@ -8,15 +8,18 @@ import Help from "./src/components/help/Help";
 import Error from "./src/components/error/Error";
 import RestaurantMenu from "./src/components/RestaurantMenu/RestaurantMenu";
 //import Grocery from "./src/components/grocery/Grocery";
+import { Provider } from "react-redux";
 
 const Grocery = lazy(() => import("./src/components/grocery/Grocery"));
 
 const App = () => {
   return (
+    <Provider store={appStore}>
     <div className="App">
       <Header />
       <Outlet />
     </div>
+    </Provider>
   );
 };
 

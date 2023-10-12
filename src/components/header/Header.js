@@ -2,6 +2,7 @@ import { LOGO_URL } from "../../utils/constants";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const [btnNameLogin, setBtnNameLogin] = useState("Login");
@@ -10,8 +11,14 @@ const Header = () => {
     console.log('Use effect called');
   },[btnNameLogin])
 
-  console.log("Header is rendered");
+  //console.log("Header is rendered");
+
   const onlineStatus = useOnlineStatus();
+
+  //Subscribing to the store using useSelector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
+
 
   return (
     <div className="header">
@@ -68,7 +75,7 @@ const Header = () => {
               src="https://img.icons8.com/ios/50/shopping-cart--v1.png"
               alt="shopping-cart--v1"
             />
-            <span>Cart</span>
+            <span>Cart {cartItems.length}</span>
           </li>
         </ul>
       </div>

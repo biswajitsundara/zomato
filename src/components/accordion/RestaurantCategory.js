@@ -1,4 +1,4 @@
-import downarrow from "../../utils/downarrow.svg";
+import downarrow from "../../../public/assets/downarrow.svg";
 import ItemList from "./ItemList";
 import { useState } from "react";
 

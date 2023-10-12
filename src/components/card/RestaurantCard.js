@@ -1,5 +1,5 @@
 import {CDN_URL} from '../../utils/constants';
-import starFillSvg from '../../utils/star-fill.svg';
+import starFillSvg from '../../../public/assets/star-fill.svg';
 
 const RestaurantCard = (props) => {
   const { resData } = props;

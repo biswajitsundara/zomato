@@ -1,10 +1,7 @@
 import Shimmer from "../card/Shimmer";
 import { useParams } from "react-router-dom";
-import starFillSvg from "../../utils/star-fill-green.svg";
-import { CDN_URL } from "../../utils/constants";
-import nonveg from "../../utils/nonveg.svg";
-import veg from "../../utils/veg.svg";
-import starFillOrange from '../../utils/star-fill-orange.svg';
+import starFillSvg from "../../../public/assets/star-fill-green.svg";
+import starFillOrange from '../../../public/assets/star-fill-orange.svg';
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
 import RestaurantCategory from "../accordion/RestaurantCategory";
 import {useState} from 'react';

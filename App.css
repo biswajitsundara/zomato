@@ -479,3 +479,99 @@ hr.rating-separator {
   flex-direction: column;
   gap: 0.2rem;
 }
+
+.cart-container {
+  display: flex;
+  gap: 2%;
+}
+
+.cart-checkout {
+  flex: 70%;
+  border: 1px solid black;
+}
+
+.cart-item-list {
+  flex: 30%;
+  /* border: 1px solid black; */
+}
+
+.res-header-img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.list-cart-header {
+  display: flex;
+  gap: 1rem;
+}
+
+.place-text {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+
+.cart-rest-info {
+  align-items: flex-start;
+}
+
+.cart-rest-name {
+  margin: 0;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  font-size: 12px;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
+.counter-btn {
+  border: 1px solid silver;
+  padding: 1px;
+  display: flex;
+  width: 3rem;
+  gap: 0.7rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+.suggestion{
+  border: 0;
+  outline: 0;
+  margin-top: 1rem;
+  resize: none;
+  background: #f9f9f9;
+  color: #3d4152;
+  padding: 8px 8px 8px 20px;
+  font-size: 12px;
+}
+
+input[name='CUTLERY_INSTRUCTION_CHK_BOX']{
+  align-items: start;
+  margin-top: 1rem;
+}
+.no-contact-delivery{
+  display: flex;
+  font-size: 12px;
+  gap: 1rem;
+  border: 1px solid #a9abb2;
+  padding: 1px;
+  margin-top: 1rem;
+}
+
+
+.no-delivery-header{
+  font-weight: 700;
+    color: #3e4152;
+}
+.no-delivery-text{
+  opacity: .6;
+    color: #282c3f;
+}

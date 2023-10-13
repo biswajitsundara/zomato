@@ -75,7 +75,7 @@ const Header = () => {
               src="https://img.icons8.com/ios/50/shopping-cart--v1.png"
               alt="shopping-cart--v1"
             />
-            <span>Cart {cartItems.length}</span>
+            <Link to="/cart" className="link-route"><span>Cart {cartItems.length}</span></Link>
           </li>
         </ul>
       </div>

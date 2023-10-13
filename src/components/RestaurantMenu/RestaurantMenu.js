@@ -5,6 +5,8 @@ import starFillOrange from '../../../public/assets/star-fill-orange.svg';
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
 import RestaurantCategory from "../accordion/RestaurantCategory";
 import {useState} from 'react';
+import { useDispatch } from "react-redux";
+import { setRestaurantName } from '../../utils/cartSlice';
 
 const RestaurantMenu = () => {
 
@@ -46,7 +48,8 @@ const RestaurantMenu = () => {
     </div>
   );
 
-
+  const dispatch = useDispatch();
+  dispatch(setRestaurantName(name));
 
   return (
     <div className="menu-body">

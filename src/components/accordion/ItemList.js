@@ -5,14 +5,16 @@ import { CDN_URL } from "../../utils/constants";
 import { useDispatch } from "react-redux";
 import { addItem } from '../../utils/cartSlice';
 
-const ItemList = ({ itemCard, isLastItem }) => {
+const ItemList = ({ itemCard, restaurantName, isLastItem }) => {
   //console.log(itemCard);
 
   const dispatch = useDispatch();
 
   const handleAddItem = (item) =>{
-    dispatch(addItem(item));
+    dispatch(addItem(item, restaurantName));
   }
+
+
 
   const bestSellerRibbon = (
     <div>

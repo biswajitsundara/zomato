@@ -487,11 +487,15 @@ hr.rating-separator {
 
 .cart-checkout {
   flex: 70%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cart-item-list {
   flex: 30%;
+  /* width: 500px; */
+  padding: 2rem;
+  box-shadow: 2 6px 8px rgba(0, 0, 0, 0.1);
   /* border: 1px solid black; */
 }
 
@@ -574,4 +578,53 @@ input[name='CUTLERY_INSTRUCTION_CHK_BOX']{
 .no-delivery-text{
   opacity: .6;
     color: #282c3f;
+}
+
+
+.btn-clear-cart, .btn-explore-restaurants{
+  border: 1px solid #fc8019;
+    color: #fff;
+    background-color: #fc8019;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
+    width: auto;
+    text-transform: uppercase;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    margin-top: 1rem;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s
+    
+}
+
+.btn-clear-cart:hover, .btn-explore-restaurants:hover{
+  
+  background-color: #dd7621; /* Change the background color on hover */
+}
+
+.empty-cart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+}
+
+
+.empty-cart-text{
+  margin: 0;
+  padding: 0;
+  color: #7e808c;
+  font-size: 12px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.empty-cart-header{
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem;
+  color: #535665;
 }

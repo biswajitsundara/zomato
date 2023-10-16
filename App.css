@@ -483,6 +483,7 @@ hr.rating-separator {
 .cart-container {
   display: flex;
   gap: 2%;
+  margin-bottom: 5rem;
 }
 
 .cart-checkout {
@@ -494,10 +495,26 @@ hr.rating-separator {
 .cart-item-list {
   flex: 30%;
   /* width: 500px; */
+  
+  
+  /* border: 1px solid black; */
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cart-item-list-top{
   padding: 2rem;
   box-shadow: 2 6px 8px rgba(0, 0, 0, 0.1);
-  /* border: 1px solid black; */
 }
+
+.cart-item-list-bottom{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 
 .res-header-img {
   width: 4rem;
@@ -546,7 +563,7 @@ hr.rating-separator {
   margin-top: 0.5rem;
 }
 
-.suggestion{
+.suggestion {
   border: 0;
   outline: 0;
   margin-top: 1rem;
@@ -557,11 +574,11 @@ hr.rating-separator {
   font-size: 12px;
 }
 
-input[name='CUTLERY_INSTRUCTION_CHK_BOX']{
+input[name="CUTLERY_INSTRUCTION_CHK_BOX"] {
   align-items: start;
   margin-top: 1rem;
 }
-.no-contact-delivery{
+.no-contact-delivery {
   display: flex;
   font-size: 12px;
   gap: 1rem;
@@ -570,41 +587,39 @@ input[name='CUTLERY_INSTRUCTION_CHK_BOX']{
   margin-top: 1rem;
 }
 
-
-.no-delivery-header{
+.no-delivery-header {
   font-weight: 700;
-    color: #3e4152;
+  color: #3e4152;
 }
-.no-delivery-text{
-  opacity: .6;
-    color: #282c3f;
+.no-delivery-text {
+  opacity: 0.6;
+  color: #282c3f;
 }
 
-
-.btn-clear-cart, .btn-explore-restaurants{
+.btn-clear-cart,
+.btn-explore-restaurants {
   border: 1px solid #fc8019;
-    color: #fff;
-    background-color: #fc8019;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
-    width: auto;
-    text-transform: uppercase;
-    height: 40px;
-    line-height: 40px;
-    font-size: 12px;
-    margin-top: 1rem;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s
-    
+  color: #fff;
+  background-color: #fc8019;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  width: auto;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  margin-top: 1rem;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.btn-clear-cart:hover, .btn-explore-restaurants:hover{
-  
+.btn-clear-cart:hover,
+.btn-explore-restaurants:hover {
   background-color: #dd7621; /* Change the background color on hover */
 }
 
-.empty-cart{
+.empty-cart {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -612,8 +627,7 @@ input[name='CUTLERY_INSTRUCTION_CHK_BOX']{
   padding-top: 4rem;
 }
 
-
-.empty-cart-text{
+.empty-cart-text {
   margin: 0;
   padding: 0;
   color: #7e808c;
@@ -622,9 +636,137 @@ input[name='CUTLERY_INSTRUCTION_CHK_BOX']{
   margin-bottom: 1rem;
 }
 
-.empty-cart-header{
+.empty-cart-header {
   margin: 0;
   padding: 0;
   margin-top: 1rem;
   color: #535665;
+}
+
+.apply-coupon {
+  border: 1px dashed #a9abb2;
+  color: #535665;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 15px;
+  margin: 10px 0 15px;
+  font-weight: 500;
+  height: 55px;
+  gap: 1rem;
+}
+
+.discount-image {
+  width: 2rem;
+}
+
+.bill-detail-header {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #282c3f;
+  margin-bottom: 1rem;
+}
+
+.item-details, .delivery-details, .delivery-tip,.platform-fee, .GST{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #686b78;
+  margin-bottom: 0.5rem;
+}
+
+.bill-divider{
+  border-bottom: 1px solid #e9e9eb;
+  margin: 17px 0 15px;
+}
+
+.bold-bill-divider{
+  border-bottom: 2px solid rgb(38, 36, 36);
+  margin-top: 2rem;
+}
+
+.total-pay{
+  background: #fff;
+  height: 60px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #282c3f;
+  z-index: 1;
+justify-content: space-between;
+font-size: 14px;
+
+}
+
+
+.cart-savings{
+  margin-top: 20px;
+  height: 40px;
+  background-color: #dbe5dc;
+  border: 1px solid #60b246;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #60b246;
+}
+
+/* .delivery-message{
+  padding: 0 30px;
+    margin-top: 16px;
+    background: #fff;
+    box-shadow: 2 6px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.cancellation-warning{
+  background-color: #fff;
+    margin: 16px 0;
+    /* padding: 0 30px; */
+    padding: 16px 16px 0!important;
+    border: 1px solid #e9e9eb;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.cancel-heading{
+  font-size: 14px;
+  color: #3e4152;
+    line-height: 20px;
+    font-weight: 600;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.cancel-notice-message{
+  font-size: 12px;
+  line-height: 24px;
+  color: #3e4152;
+}
+
+.note{
+  color: red;
+}
+
+.avoid-note{
+  color: grey;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 12px;
+}
+
+
+.cancel-link{
+  font-size: 12px;
+  color: #ec6148!important;
+    border-bottom: 1px dotted #ec6148!important;
+    margin-right: 24px;
+    font-weight: 500;
+    padding-bottom: 3px;
+    text-decoration: none;
 }
